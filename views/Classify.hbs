@@ -1,0 +1,299 @@
+<div class="wrapper">
+      
+      <header class="main-header">
+        <!-- Logo -->
+        <a href="index2.html" class="logo"><b>TRUONG</b>MOBILE</a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              <li class="dropdown messages-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="label label-success">4</span>
+                </a>
+            
+              </li>
+              <!-- Notifications: style can be found in dropdown.less -->
+              <li class="dropdown notifications-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-bell-o"></i>
+                  <span class="label label-warning">10</span>
+                </a>
+
+              </li>
+              <!-- Tasks: style can be found in dropdown.less -->
+              <li class="dropdown tasks-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-flag-o"></i>
+                  <span class="label label-danger">9</span>
+                </a>
+            
+              </li>
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="https://sendidau.com/wp-content/uploads/2021/01/meme-meo.jpg" class="user-image" alt="User Image"/>
+                  <span class="hidden-xs">Đỗ Võ Anh Trường</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header">
+                    <img src="https://sendidau.com/wp-content/uploads/2021/01/meme-meo.jpg" class="img-circle" alt="User Image" />
+                    <p>
+                     Đỗ Võ Anh Trường - Ad Mobile Shop
+                      <small>Member since Nov. 2021</small>
+                    </p>
+                  </li>
+                  <!-- Menu Body -->
+            
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="https://sendidau.com/wp-content/uploads/2021/01/meme-meo.jpg" class="img-circle" alt="User Image" />
+            </div>
+            <div class="pull-left info">
+              <p>Đỗ Võ Anh Trường</p>
+
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+    
+          <!-- /.search form -->
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="treeview">
+              <a href="/Home">
+                <i class=" fa fa-dashboard"></i>
+               
+                <span>Home</span> <small class="label pull-right bg-green">new</small>
+              </a>
+              </a>
+            </li>
+            <li class="active treeview">
+                <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>Classify</span> <small class="label pull-right bg-green">new</small>
+                </a>
+              </li>
+            <li>
+              <a href="/Product">
+                <i class="fa fa-th"></i> <span>Product</span> <small class="label pull-right bg-green">new</small>
+              </a>
+            </li>
+            <li class="treeview">
+              <a >
+                <i class="fa fa-pie-chart"></i>
+                <span>Setting</span>
+                
+              </a>
+            </li>
+        
+        </section>
+
+      
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Right side column. Contains the navbar and content of the page -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Classify
+            <small>Control panel</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Classify</a></li>
+          
+          </ol>
+        </section>
+
+        <Section class="content">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-9">
+            <!-- general form elements -->
+            <div class="box box-primary">
+              <div class="box-header">
+                <h3 class="box-title">Classify</h3>
+              </div><!-- /.box-header -->
+              <!-- form start -->
+              <div class="box">
+         
+                <div class="box-body">
+                  <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>Classify name</th>
+                        <th>Count</th>
+                        <th>Product</th>
+                        <th>Date</th>
+                        <th>Edit</th>
+                     
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {{#each Classify}}
+                      <tr>
+                        <td>{{this.name}}</td>
+                        <td>{{this.count}}</td>
+                        <td>  {{this.product}}</td>
+                         <td>  {{formatDate this.date}}</td>
+                      {{!-- <td><a href="/Classify/edit/{{this.Id}}"/>Edit</td> --}}
+                        {{!-- <td><a href="/Classify/edit/{{this.Id}}"/>Edit</td> --}}
+                        <td><button type="button" class=" btn btn-warning" onclick="onEdit('{{this._id}}')">Edit</button>
+                      <button type="button" class="btn btn-danger" onclick="onDelete('{{this._id}}')" >Delete</button></td>
+
+                        {{!-- <td><a href="/classify/edit/{{this.id}}">Edit</a></td> --}}
+                      </tr>
+                    {{/each}}
+                    </tbody>
+
+                  </table>
+                </div><!-- /.box-body -->
+              </div>
+            </div>
+
+          </div><!--/.col (left) -->
+           <div class="col-md-3">
+               <h2 class="bg-primary">Add Product</h2>
+                <form role="form" action="/Classify/insert" onsubmit = "return validateForm()" method="POST">
+                  <!-- text input -->
+                  <div class="form-group">
+                    
+                    <input id="name" name="name"  class="form-control" type="text" placeholder="Enter Name ..."/>
+                    <p id="aName" style="color: red; margin-left:15%;"></p>
+                    
+                  </div>
+                  <div class="form-group">
+                    
+                    <input id="count" name="count" type="number"  class="form-control" placeholder="Enter Count ..."/>
+                     <i id="aCount" style="color: red; margin-left:15%;"></i>
+                    </div>
+                    <div class="form-group">
+                      
+                        <input id="product"  name="product" type="text"  class="form-control" placeholder="Enter ProductName ..."/>
+                         <i id="aProduct"style="color: red; margin-left:15%;"></i>
+                      </div>
+                      <div class="form-group">
+                      
+                        <input id="date" name="date" type="date"  class="form-control" placeholder="Enter Date ..."/>
+                         <i id="aDate"style="color: red; margin-left:15%;"></i>
+                      </div>
+                      <div class="form-group">
+                        <button id="btnAdd"  class="form-control" type="submit" class="btn btn-primary">Add Classify</button>
+                      </div>
+
+                </form>
+           </div>
+          <!-- right column -->
+         <!--/.col (right) -->
+        </div>   <!-- /.row -->
+      </section>
+      
+       
+
+            </section><!-- /.Left col -->
+            <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
+          </div><!-- /.row (main row) -->
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 2.0
+        </div>
+        <strong>Copyright &copy; 2014-2015 Almsaeed Studio.</strong> All rights reserved.
+      </footer>
+    </div><!-- ./wrapper -->
+    <script>
+ function validateForm()  {
+             var n = document.getElementById("name").value;
+             var c = document.getElementById("count").value;
+              var numC = Number(c);
+              var p = document.getElementById("product").value;
+              var d=document.getElementById('date').value;
+              var date=new Date(d)
+                var today = new Date()
+                today.setHours(0,0,0,0,)
+
+               var aN=document.getElementById("aName");
+               var aC=document.getElementById("aCount");
+               var aP=document.getElementById("aProduct");
+               var aD=document.getElementById("aDate");
+ 
+             if(n== "" || n.trim().length >20) {
+                aN.innerHTML="Please enter Classify Name"
+                 return false;
+                 
+             }else{aN.innerHTML=""}
+             if(numC <1 || numC > 50) {
+                  aC.innerHTML="Please enter Classify Count"
+                 return false;
+             }else{aC.innerHTML=""}
+                if(p== "" || p.trim().length >50) {
+                  aP.innerHTML="Please enter Product Name"
+                 return false;
+             }else{aP.innerHTML=""}
+             if(!d || date > today){
+                aD.innerHTML="Please enter Classify Date"
+                return false;
+             }else{aD.innerHTML=""}
+             return true;
+         }
+
+      const onDelete=async(id)=>{
+  const url='http://localhost:3000/Classify/delete/'+id
+  const option={
+    method:'delete',
+    headers: {
+      'Content-Type':'application/json'
+    }
+  }
+  try{
+    await fetchAPI(url,option)
+    console.log('da load')
+    window.location.href='/Classify'
+  }catch(e){
+console.log('Delete error: ',e)
+  }
+}
+
+      const fetchAPI =async(url,option)=>{
+        const res = await fetch(url,option)
+        return res.json()
+      }
+
+
+  const onEdit = id =>{
+    window.location.href='/Classify/edit/'+id
+     }
+    </script>
+
+    
